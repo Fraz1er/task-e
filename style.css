@@ -31,14 +31,6 @@ body {
     border-radius: 8px;
 }
 
-.intro {
-    background: white;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
 .student-info {
     background: #e8f4fc;
     padding: 20px;
@@ -60,6 +52,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     font-size: 1rem;
+    table-layout: fixed;
 }
 
 .timetable th {
@@ -70,10 +63,21 @@ body {
     font-weight: 600;
 }
 
+.timetable th:first-child,
+.timetable td:first-child {
+    width: 40%;
+}
+
+.timetable th:not(:first-child),
+.timetable td:not(:first-child) {
+    width: 12%;
+}
+
 .timetable td {
     padding: 12px 15px;
     text-align: center;
     border-bottom: 1px solid #ecf0f1;
+    word-wrap: break-word;
 }
 
 .timetable tbody tr:hover {
@@ -84,26 +88,28 @@ body {
     background-color: #f8f9fa;
 }
 
-.other-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
 @media (max-width: 768px) {
     .content { 
         margin-left: 5%; 
         margin-right: 5%; 
     }
     .site-header,
-    .intro,
     .other-content { 
         display: none; 
     }
     .student-info,
     .table-wrap { 
         display: block; 
+    }
+    
+    .timetable th:first-child,
+    .timetable td:first-child {
+        width: 50%;
+    }
+    
+    .timetable th:not(:first-child),
+    .timetable td:not(:first-child) {
+        width: 10%;
     }
 }
 
@@ -123,5 +129,15 @@ body {
     .timetable th,
     .timetable td {
         padding: 8px 10px;
+    }
+    
+    .timetable th:first-child,
+    .timetable td:first-child {
+        width: 60%;
+    }
+    
+    .timetable th:not(:first-child),
+    .timetable td:not(:first-child) {
+        width: 8%;
     }
 }
